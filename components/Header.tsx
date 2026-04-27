@@ -17,7 +17,7 @@ export default function Header() {
           lines of new code. You do the math.
         </p>
         <p>
-          Ask me about: Leetcode, Recursion, Geese (band = good, bird = scary, food = ?), and AI.
+          Ask me about: Leetcode, Recursion, Geese (band = good, bird = scary, food = TBD), and AI.
         </p>
       </div>
     </section>
