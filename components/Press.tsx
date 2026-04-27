@@ -11,18 +11,22 @@ const pressLinks = [
 
 export default function Press() {
   return (
-    <section className="mb-20">
-      <h2 className="text-xs font-medium uppercase tracking-widest text-gray-400 mb-6">Press</h2>
-      <p className="text-[15px] text-gray-500 leading-relaxed">
+    <section id="press" className="mb-28 pt-10 border-t border-border">
+      <p className="text-[10px] font-sans font-medium uppercase tracking-[0.15em] text-subtle mb-7">
+        Press
+      </p>
+      <p className="text-[15px] text-muted leading-relaxed font-sans font-light">
         {pressLinks.map((link, i) => (
           <span key={link.label}>
             <a
               href={link.href}
-              className="hover:text-gray-900 transition-colors underline underline-offset-2 decoration-gray-300"
+              className="hover:text-accent transition-colors duration-200 underline underline-offset-[3px] decoration-border hover:decoration-accent/40"
             >
               {link.label}
             </a>
-            {i < pressLinks.length - 1 && <span className="mx-1 text-gray-300">·</span>}
+            {i < pressLinks.length - 1 && (
+              <span className="mx-2 text-border select-none">·</span>
+            )}
           </span>
         ))}
       </p>

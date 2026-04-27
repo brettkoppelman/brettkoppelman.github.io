@@ -1,10 +1,12 @@
 export default function Header() {
   return (
-    <section id="me" className="mb-20">
-      <h1 className="text-3xl font-medium tracking-tight text-gray-900 mb-1">Your Name</h1>
-      <p className="text-sm text-gray-400 mb-10">@yourhandle</p>
+    <section id="me" className="mb-28">
+      <h1 className="font-display text-5xl font-normal tracking-tight text-ink mb-2">
+        Brett Koppelman
+      </h1>
+      <p className="text-sm text-subtle font-sans mb-14 tracking-wide">@brettkoppelman</p>
 
-      <div className="space-y-4 text-gray-600 leading-relaxed text-[15px] max-w-xl">
+      <div className="space-y-5 text-muted leading-[1.75] text-[15px] max-w-[530px] font-sans font-light">
         <p>
           I'm a builder interested in the intersection of software, systems, and people. Currently
           working on something new — focused on making complex things feel simple.

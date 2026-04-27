@@ -1,19 +1,17 @@
 const links = [
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/yourhandle' },
-  { label: 'GitHub', href: 'https://github.com/yourhandle' },
-  { label: 'X', href: 'https://x.com/yourhandle' },
-  { label: 'Email', href: 'mailto:you@example.com' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/brettkoppelman24' },
+  { label: 'Email', href: 'mailto:brettkoppelman01@gmail.com' },
 ]
 
 export default function Footer() {
   return (
-    <footer className="pt-8 border-t border-gray-100">
-      <div className="flex gap-5">
+    <footer className="pt-8 border-t border-border">
+      <div className="flex gap-6">
         {links.map((link) => (
           <a
             key={link.label}
             href={link.href}
-            className="text-sm text-gray-400 hover:text-gray-900 transition-colors"
+            className="text-sm font-sans text-subtle hover:text-accent transition-colors duration-200"
           >
             {link.label}
           </a>
