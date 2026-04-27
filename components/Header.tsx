@@ -6,7 +6,7 @@ export default function Header() {
       </h1>
       <p className="text-sm text-subtle font-sans mb-14 tracking-wide">@brettkoppelman</p>
 
-      <div className="space-y-5 text-muted leading-[1.75] text-[15px] max-w-[530px] font-sans font-light">
+      <div className="space-y-5 text-[#44403C] leading-[1.8] text-base max-w-[530px] font-sans font-normal">
         <p>
           I'm a builder interested in the intersection of software, systems, and people. Currently
           working on something new — focused on making complex things feel simple.
