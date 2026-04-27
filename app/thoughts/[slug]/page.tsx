@@ -2,8 +2,11 @@ import Link from 'next/link'
 import { getAllThoughts, getThought } from '@/lib/thoughts'
 import { notFound } from 'next/navigation'
 
+export const dynamicParams = false
+
 export async function generateStaticParams() {
-  return getAllThoughts().map((t) => ({ slug: t.slug }))
+  const thoughts = getAllThoughts()
+  return thoughts.map((t) => ({ slug: t.slug }))
 }
 
 export default function ThoughtPage({ params }: { params: { slug: string } }) {
@@ -22,7 +25,7 @@ export default function ThoughtPage({ params }: { params: { slug: string } }) {
         <h1 className="font-display text-4xl font-normal tracking-tight text-ink mb-12">
           {thought.title}
         </h1>
-        <div className="prose-thought">
+        <div>
           {thought.body.split('\n\n').map((para, i) => (
             <p key={i} className="text-[#44403C] font-sans leading-[1.8] text-base mb-6">
               {para.trim()}
