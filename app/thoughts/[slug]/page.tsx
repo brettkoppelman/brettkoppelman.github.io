@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import fs from 'fs'
+import path from 'path'
 import { getAllThoughts, getThought } from '@/lib/thoughts'
 import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
@@ -6,8 +8,11 @@ import Nav from '@/components/Nav'
 export const dynamicParams = false
 
 export async function generateStaticParams() {
-  const thoughts = getAllThoughts()
-  return thoughts.map((t) => ({ slug: t.slug }))
+  const dir = path.join(process.cwd(), 'content/thoughts')
+  if (!fs.existsSync(dir)) return [{ slug: '_placeholder' }]
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'))
+  if (files.length === 0) return [{ slug: '_placeholder' }]
+  return files.map((f) => ({ slug: f.replace(/\.md$/, '') }))
 }
 
 export default function ThoughtPage({ params }: { params: { slug: string } }) {

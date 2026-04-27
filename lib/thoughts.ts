@@ -16,7 +16,7 @@ export function getAllThoughts(): Thought[] {
 
   return fs
     .readdirSync(THOUGHTS_DIR)
-    .filter((f) => f.endsWith('.md'))
+    .filter((f) => f.endsWith('.md') && !f.startsWith('_'))
     .map((filename) => {
       const slug = filename.replace(/\.md$/, '')
       const raw = fs.readFileSync(path.join(THOUGHTS_DIR, filename), 'utf-8')
