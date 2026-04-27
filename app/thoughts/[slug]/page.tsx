@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getAllThoughts, getThought } from '@/lib/thoughts'
 import { notFound } from 'next/navigation'
+import Nav from '@/components/Nav'
 
 export const dynamicParams = false
 
@@ -15,10 +16,7 @@ export default function ThoughtPage({ params }: { params: { slug: string } }) {
 
   return (
     <main className="min-h-screen px-6 py-16 max-w-2xl mx-auto">
-      <nav className="flex gap-7 text-sm text-subtle mb-24 font-sans">
-        <Link href="/" className="hover:text-accent transition-colors duration-200">me</Link>
-        <Link href="/thoughts" className="hover:text-accent transition-colors duration-200">thoughts</Link>
-      </nav>
+      <Nav />
 
       <article>
         <p className="text-xs text-subtle font-sans mb-4">{formatDate(thought.date)}</p>

@@ -1,15 +1,13 @@
 import Link from 'next/link'
 import { getAllThoughts } from '@/lib/thoughts'
+import Nav from '@/components/Nav'
 
 export default function ThoughtsPage() {
   const thoughts = getAllThoughts()
 
   return (
     <main className="min-h-screen px-6 py-16 max-w-2xl mx-auto">
-      <nav className="flex gap-7 text-sm text-subtle mb-24 font-sans">
-        <Link href="/" className="hover:text-accent transition-colors duration-200">me</Link>
-        <Link href="/thoughts" className="text-ink transition-colors duration-200">thoughts</Link>
-      </nav>
+      <Nav />
 
       <h1 className="font-display text-4xl font-normal tracking-tight text-ink mb-16">Thoughts</h1>
 
